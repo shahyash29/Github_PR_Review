@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  github-pr-reviewer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: github-pr-reviewer
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - DEFAULT_GITHUB_USERNAME=${DEFAULT_GITHUB_USERNAME}
+      - GIT_USER_NAME=${GIT_USER_NAME}
+      - GIT_USER_EMAIL=${GIT_USER_EMAIL}
+      - OUTPUT_DIR=/app/output
+      - DEFAULT_COMMIT_COUNT=${DEFAULT_COMMIT_COUNT}
+      - MAX_DIFF_SIZE=${MAX_DIFF_SIZE}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - LOG_FILE=${LOG_FILE}
+      - CONTAINER_OUTPUT_DIR=/app/output
+    volumes:
+      - ./output:/app/output
+      - ./.env:/app/.env:ro
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - pr-review-network
+
+networks:
+  pr-review-network:
+    driver: bridge

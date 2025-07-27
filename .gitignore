@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# IDE / Editor settings
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python package management
+*.sqlite3
+*.db
+*.log
+*.pot
+*.py[cod]
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter / notebooks
+.ipynb_checkpoints
+
+# Node (if you use Node in workflows)
+node_modules/
+
+# Ignore PDF or other analysis artifacts
+analysis_*.pdf
+
+# Environment-specific files
+*.env.local
+*.env.development
+*.env.production
+*.env.test
+
+# Ignore compiled binaries
+*.so
+*.dll
+*.dylib
+
+# Ignore setup script logs
+*.out
+*.log
+
+# Miscellaneous
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
